@@ -138,8 +138,4 @@ export function unregister() {
         console.error(error.message);
       });
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> front-end
