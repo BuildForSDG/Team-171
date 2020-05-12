@@ -3,7 +3,8 @@ const path  = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
 
-// routes
+
+// API routes
 const aboutRoute = require('./router/about');
 const contactRoute = require('./router/contact');
 // hire is for employer accounts
@@ -14,6 +15,7 @@ const listingRoute = require('./router/listing');
 const loginRoute = require('./router/login');
 const signupRoute = require('./router/signup');
 
+// serve static files from the react app
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/',aboutRoute);
@@ -23,6 +25,11 @@ app.use('/',homeRoute);
 app.use('/',listingRoute);
 app.use('/',loginRoute);
 app.use('/',signupRoute);
+
+// request that don't match
+app.get('*', (req, res, next) =>{
+  res.sendFile(path.join(__dirname, 'build/index.html'));
+});
 // error handling
 app.use((req, res, next)=>{
   res.status(404).json({
