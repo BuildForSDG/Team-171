@@ -2,6 +2,7 @@
   "name": "team-171",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -11,9 +12,6 @@
     "react-scripts": "3.4.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.12"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +40,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^2.5.1"
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "nodemon": "^2.0.3"
   }
 }
