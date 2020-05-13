@@ -1,12 +1,20 @@
 import React from 'react';
-import './App.css';
+import Home from './components/home.component';
+import About from './components/about.component';
+import Contact from './components/contact.component';
 
-function App() {
-  return (
+export default function App() {
+  return(
     <div className="App">
-      <h1>Welcome</h1>
+      <div className="nav">
+        <nav>
+          <ul>
+            <li><Home /></li>
+            <li><About /></li>
+            <li><Contact /></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   );
 }
-
-export default App;
