@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import store from '../configureStore';
 
 class Home extends Component {
   constructor(props) {
@@ -9,25 +10,15 @@ class Home extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch('/hire')
-      .then((response) => response.json())
-      .then((data) => this.setState({ data }))
-      .catch((err) => console.log(err));
-  }
-
   render() {
-    const { data } = this.state;
-    let mydata;
-    if (data == null) {
-      mydata = 'null';
-    } else {
-      mydata = data.message;
-    }
+    store().dispatch({ type: 'INCREMENT' });
+    store().dispatch({ type: 'DECREMENT' });
+    store().dispatch({ type: 'DECREMENT' });
+    store().dispatch({ type: 'DECREMENT' });
     return (
       <div className="home">
         <h1>homepage</h1>
-        <h3>{ mydata }</h3>
+        <h3>12</h3>
       </div>
     );
   }
