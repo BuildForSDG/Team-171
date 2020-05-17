@@ -1,11 +1,11 @@
 import React from 'react';
-import './scss/App.scss';
+import './App.scss';
+import SignupForm from './components/Signup/SignupForm';
 
 function App() {
   return (
     <div className="App">
-      <h1>Homepage</h1>
-      <p>welcome</p>
+      <SignupForm />
     </div>
   );
 }
