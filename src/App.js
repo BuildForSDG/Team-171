@@ -1,13 +1,33 @@
-import React from 'react';
-import './App.scss';
-import SignupForm from './components/Signup/SignupForm';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <SignupForm />
-    </div>
+import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+
+import ProtectedRoute from "./components/Protected/ProtectedRoute";
+import Home from "./components/Home/Home";
+import Login from "./components/Login/Login";
+
+function App(props) {
+  const { isAuthenticated, isVerifying } = props;
+  return(
+    <Switch>
+      <ProtectedRoute
+        exact
+        path="/"
+        component={Home}
+        isAuthenticated={isAuthenticated}
+        isVerifying={isVerifying}
+      />
+      <Route path="/login" component={Login}/>
+    </Switch>
   );
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    isVerifying: state.auth.isVerifying,
+  };
+}
+
+export default connect(mapStateToProps)(App);
