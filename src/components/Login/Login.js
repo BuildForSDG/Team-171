@@ -5,6 +5,7 @@ import { Redirect, Link } from "react-router-dom";
 
 import { useFormik } from 'formik';
 import { loginUser } from "../../actions";
+import "../../styles/login.scss";
 
 const Login = (props) => {
   const {isAuthenticated, loginError, dispatch} = props;
@@ -24,19 +25,33 @@ const Login = (props) => {
     return <Redirect to="/" />
   } else {
     return (
-      <div>
-      <div>
-        <Link to="/signup">Create Account</Link>
+      <div className="login">
+      <div className="cta-section">
+        <div className="cta-head">
+          <p>Building Your <span>Brand</span></p>
+          <p>Made Easy</p>
+        </div>
+        <div className="cta-des">
+          <p>loremAdipisicing deserunt ex consectetur dolor aute excepteur qui et.</p>
+        </div>
       </div>
-      <div>
+      <div className="form-view">
+        <div className="signup-link">
+          <p>Don't have an account? <Link to="/signup" className="link" style={{textDecoration: 'none'}}><span>Sign up</span></Link></p>
+        </div>
+      <div className="form">
+        <div className="form-title">
+          <p>Login</p>
+        </div>
         <form onSubmit={formik.handleSubmit}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">E-mail</label>
           <input
             id="email"
             name="email"
             type="email"
             onChange={formik.handleChange}
             value={formik.values.email}
+            placeholder="example@email.com"
           />
           <label htmlFor="password">Password</label>
           <input
@@ -45,10 +60,12 @@ const Login = (props) => {
             type="password"
             onChange={formik.handleChange}
             value={formik.values.password}
+            placeholder="password"
           />
           {loginError && (<p>Incorrect email or password</p>)}
-          <button type="submit">Submit</button>
+          <button type="submit" className="login-btn">LOGIN</button>
         </form>
+        </div>
       </div>
       </div>
     );
