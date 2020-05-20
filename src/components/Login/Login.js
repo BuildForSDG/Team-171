@@ -32,8 +32,8 @@ const Login = (props) => {
             <p>Made Easy</p>
           </div>
           <div className="cta-des">
-          <p>loremAdipisicing deserunt ex consectetur dolor aute excepteur qui et.</p>
-        </div>
+            <p>loremAdipisicing deserunt ex consectetur dolor aute excepteur qui et.</p>
+          </div>
         </div>
         <div className="form-view">
           <div className="signup-link">
