@@ -3,11 +3,10 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions";
 
 const Home = (props) => {
-  const {isLoggingOut, logoutError} = props; 
+  const { isLoggingOut, logoutError, dispatch } = props; 
   const handleLogout = () => {
-    const {dispatch}  = props;
     dispatch(logoutUser());
-  }
+  };
   return(
     <div>
       <h1>You have reached the homepage</h1>
@@ -17,7 +16,7 @@ const Home = (props) => {
       {logoutError && <p>Error logging out</p>}
     </div>
   );
-}
+};
 
 function mapStateToProps(state) {
   return {

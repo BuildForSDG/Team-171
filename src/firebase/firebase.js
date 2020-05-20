@@ -11,7 +11,7 @@ const devConfig = {
   messagingSenderId: process.env.REACT_APP_DEV_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_DEV_APP_ID,
   measurementId: process.env.REACT_APP_DEV_MEASUREMENT_ID,
-}
+};
 
 const prodConfig = {
   apiKey: process.env.REACT_APP_PROD_API_KEY,
@@ -22,9 +22,9 @@ const prodConfig = {
   messagingSenderId: process.env.REACT_APP_PROD_MESSAGING_SENDER_ID,
   appId: process.env.REACT_APP_PROD_APP_ID,
   measurementId: process.env.REACT_APP_PROD_MEASUREMENT_ID,
-}
+};
 
-const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig;
+const config = process.env.NODE_ENV === "production" ? prodConfig : devConfig;
 
 export const myFirebase = firebase.initializeApp(config);
 const baseDb = myFirebase.firestore();

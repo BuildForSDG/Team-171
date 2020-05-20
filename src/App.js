@@ -10,7 +10,7 @@ import Signup from "./components/Signup/Signup";
 
 function App(props) {
   const { isAuthenticated, isVerifying } = props;
-  return(
+  return (
     <Switch>
       <ProtectedRoute
         exact
@@ -19,8 +19,8 @@ function App(props) {
         isAuthenticated={isAuthenticated}
         isVerifying={isVerifying}
       />
-      <Route path="/login" component={Login}/>
-      <Route path="/signup" component={Signup}/>
+      <Route path="/login" component={Login} />
+      <Route path="/signup" component={Signup} />
     </Switch>
   );
 }
